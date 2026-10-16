@@ -1,0 +1,302 @@
+================================================================================
+                    Reels Downloader — Proprietary Notice
+================================================================================
+
+Mohamed Farouk Amer ("the Developer") owns the developer-owned portions of
+Reels Downloader described in this document. In this document, "the
+Application" means those developer-owned portions, described in section 3.
+
+--------------------------------------------------------------------------------
+1. Proprietary Software — All Rights Reserved
+--------------------------------------------------------------------------------
+Copyright © Mohamed Farouk Amer. All Rights Reserved.
+
+Reels Downloader is proprietary software owned by Mohamed Farouk Amer.
+
+Redistribution, resale, sublicensing, or commercial distribution of the
+developer-owned portions of this software, in whole or in part, is prohibited
+without the developer's prior written permission, except where applicable law or
+a third-party license requires otherwise.
+
+No permission to redistribute, resell, or commercially distribute the
+developer-owned portions of this software is granted unless explicitly
+authorized in writing by the developer.
+
+All rights in the developer-owned portions that are not expressly granted are
+reserved by the developer.
+
+Third-party components remain subject to their respective licenses and
+applicable legal obligations. This notice does not modify or override those
+licenses.
+
+--------------------------------------------------------------------------------
+2. What this notice replaces
+--------------------------------------------------------------------------------
+This notice replaces the earlier draft freeware licence that accompanied
+pre-release builds of this application, and it withdraws every grant that draft
+made — including the grant to use the application free of charge, and the grant
+to redistribute the complete official installer. That draft was never approved
+and is not in force. No right granted by any third-party licence is affected by
+this section; see section 8.
+
+--------------------------------------------------------------------------------
+3. What this notice covers
+--------------------------------------------------------------------------------
+This notice covers the developer-owned portions of the application: its source
+code, its build and packaging configuration, its interface, its release
+tooling, and the compiled application as it is installed — except for the
+third-party components listed in section 8 and in `THIRD_PARTY_NOTICES.md`,
+which are governed by their own licences and are not covered by this notice.
+
+Where applicable law or a third-party licence requires otherwise — including
+the rights the GNU Lesser General Public License grants for FFmpeg and FFprobe,
+and the right to receive their corresponding source — that requirement prevails
+over this notice.
+
+--------------------------------------------------------------------------------
+4. Mandatory updates
+--------------------------------------------------------------------------------
+The Application is designed to work only with the latest released version. It is
+intended to check for updates, and it may decline to run, or may stop working
+correctly, when a newer version has been released; whether a given version
+performs that check itself does not change this. **Old versions are not
+supported and may stop working at any time**, without notice. Continuing to use
+an old version is at your own risk and is not supported.
+
+--------------------------------------------------------------------------------
+5. No warranty
+--------------------------------------------------------------------------------
+THE APPLICATION IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+NON-INFRINGEMENT. The Developer does not warrant that the Application will be
+uninterrupted, error-free, virus-free, or that it will meet your requirements,
+or that it will continue to work with any particular website, service, or
+content.
+
+--------------------------------------------------------------------------------
+6. Limitation of liability
+--------------------------------------------------------------------------------
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+DEVELOPER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR
+PUNITIVE DAMAGES, OR FOR ANY LOSS OF DATA, PROFITS, REVENUE, OR GOODWILL,
+ARISING OUT OF OR IN CONNECTION WITH THE APPLICATION OR ITS USE OR INABILITY
+TO BE USED, EVEN IF THE DEVELOPER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGES.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE TOTAL LIABILITY OF THE
+DEVELOPER UNDER THIS LICENCE, FOR ANY AND ALL CLAIMS, SHALL NOT EXCEED THE
+AMOUNT YOU PAID FOR THE APPLICATION, WHICH IS ZERO.
+
+Some jurisdictions do not allow the exclusion or limitation of certain
+warranties or liabilities. To the extent such exclusions or limitations are not
+permitted by law, they apply to you only to the maximum extent permitted.
+
+--------------------------------------------------------------------------------
+7. Your responsibilities
+--------------------------------------------------------------------------------
+The Application is a tool. What you do with it is your responsibility, and you
+are solely responsible for how you use it. In particular:
+
+- You must comply with all copyright and other intellectual-property laws that
+  apply to you, and with the terms of service of any platform or website the
+  Application interacts with.
+- You may use the Application only to download content that you have the right
+  to download — content that is public, content that you own, or content that
+  its owner has authorised you to download. Whether a piece of content is
+  publicly accessible is not by itself permission to keep or redistribute it.
+- You must not use the Application to infringe the rights of any person, to
+  circumvent any technical protection measure, to access content you are not
+  authorised to access, or for any unlawful purpose.
+
+The Developer does not select, host, transmit, or make available any content,
+and does not endorse or encourage any particular use of the Application.
+
+--------------------------------------------------------------------------------
+8. Third-party components keep their own licences
+--------------------------------------------------------------------------------
+The Application includes third-party components. Each of them is governed by
+its own licence, and **nothing in this licence restricts, limits, or overrides
+any right granted to you by any of those licences.**
+
+This applies in particular and without limitation to **FFmpeg and FFprobe**,
+which are distributed under the GNU Lesser General Public License version 2.1
+or later, upgraded to version 3 by their build configuration. The rights the
+LGPL grants you — including the right to receive the corresponding source, and
+the right to replace the FFmpeg binaries — are fully preserved, are not
+narrowed by anything here, and are described in `FFMPEG-COPYRIGHT-NOTICE.md`,
+`FFMPEG-SOURCE-OFFER.md`, and `THIRD_PARTY_NOTICES.md`, all installed with the
+Application.
+
+--------------------------------------------------------------------------------
+9. No affiliation or endorsement
+--------------------------------------------------------------------------------
+Reels Downloader is an independent project. It is not affiliated with, endorsed
+by, sponsored by, or in any way officially connected to Meta Platforms, Inc.,
+Facebook, Instagram, or any other platform, website, service, or company. All
+product names, logos, brands, trademarks, and registered trademarks are the
+property of their respective owners, and are referenced here only to identify
+the platforms the Application can interact with.
+
+--------------------------------------------------------------------------------
+10. Changes to this licence and to the Application
+--------------------------------------------------------------------------------
+The Developer may change this licence at any time, and may change, suspend, or
+discontinue the Application or any part of it at any time, without notice and
+without liability. Use of a version of the Application is subject to the
+licence shipped with that version.
+
+--------------------------------------------------------------------------------
+11. Governing language
+--------------------------------------------------------------------------------
+This licence was written in English and translated into Arabic for
+convenience. The English text governs; the Arabic translation is provided
+without warranty of exactness and does not modify the English terms.
+
+
+================================================================================
+                              الترجمة العربية
+                   (ترجمة إعلامية؛ النص الإنجليزي هو المعتمد)
+================================================================================
+
+================================================================================
+                  إشعار بملكية برمجيات مملوكة — جميع الحقوق محفوظة
+================================================================================
+
+يملك «المطوّر»، وهو Mohamed Farouk Amer، الأجزاء المملوكة للمطوّر من تطبيق
+Reels Downloader الموصوفة في هذا المستند. ويُشار في هذا المستند إلى «التطبيق»
+بالمقصود تلك الأجزاء المملوكة للمطوّر، الموصوفة في القسم 3.
+
+--------------------------------------------------------------------------------
+1. برمجيات مملوكة — جميع الحقوق محفوظة
+--------------------------------------------------------------------------------
+حقوق النشر © 2026 Mohamed Farouk Amer. جميع الحقوق محفوظة.
+
+تطبيق Reels Downloader هو برمجيات مملوكة للمطوّر.
+
+يُحظر، دون إذن كتابي مسبق من المطوّر، إعادة توزيع الأجزاء المملوكة للمطوّر من
+هذه البرمجيات أو بيعها أو تفويضها من الباطن أو توزيعها تجارياً، كلياً أو جزئياً،
+إلا إذا اشترط القانون المنطبق أو ترخيص من طرف ثالث غير ذلك.
+
+ولا يُمنح أي إذن لإعادة توزيع الأجزاء المملوكة للمطوّر من هذه البرمجيات أو بيعها
+أو توزيعها تجارياً، إلا إذا أذِن المطوّر بذلك صراحةً كتابةً.
+
+وتحتفظ جميع الحقوق التي لا تُمنح صراحةً في الأجزاء المملوكة للمطوّر للمطوّر.
+
+وتظل مكوّنات الأطراف الثالثة خاضعةً لتراخيصها والالتزامات القانونية المنطبقة
+عليها. ولا يُعدّل هذا الإشعار تلك التراخيص ولا يلغيها.
+
+--------------------------------------------------------------------------------
+2. ما يستبدله هذا الإشعار
+--------------------------------------------------------------------------------
+يستبدل هذا الإشعار ترخيص «البرنامج المجاني» المسودة الذي كان يرافق إصدارات ما
+قبل الإصدار من هذا التطبيق، ويسحب كل منحٍ ورد فيها — بما في ذلك منح استخدام
+التطبيق مجاناً، ومنح إعادة توزيع ملف التثبيت الرسمي الكامل. لم تُعتمد تلك
+المسودة قط، وهي غير سارية. ولا يمس هذا القسم أي حق يمنحه أي ترخيص من طرف ثالث؛
+انظر القسم 8.
+
+--------------------------------------------------------------------------------
+3. ما يشمله هذا الإشعار
+--------------------------------------------------------------------------------
+يشمل هذا الإشعار الأجزاء المملوكة للمطوّر من التطبيق: شيفرته المصدرية، وإعدادات
+البناء والتغليف، وواجهة الاستخدام، وأدوات الإصدار، والتطبيق المُجمَّع كما هو
+مثبَّت — باستثناء مكوّنات الأطراف الثالثة المذكورة في القسم 8 وفي ملف
+`THIRD_PARTY_NOTICES.md`، التي تخضع لتراخيصها الخاصة وليست مشمولةً بهذا الإشعار.
+
+وعند اشتراط القانون المنطبق أو ترخيص من طرف ثالث غير ذلك — بما في ذلك الحقوق
+التي تمنحها رخصة جنو العمومية الصغرى (LGPL) لملفَّي FFmpeg و FFprobe، والحق في
+الحصول على الكود المصدري المطابق — يسود ذلك الاشتراط على هذا الإشعار.
+
+--------------------------------------------------------------------------------
+4. التحديث الإلزامي
+--------------------------------------------------------------------------------
+يُصمَّم التطبيق ليعمل مع أحدث إصدار تم نشره فقط. وهو مُصمَّم للتحقق من
+وجود التحديثات، وقد يرفض العمل، أو قد يتوقف عن العمل بشكل صحيح، عند صدور
+إصدار أحدث؛ وما إذا كان إصدار معين يقوم بهذا التحقق بنفسه لا يغيِّر من
+ذلك. **الإصدارات القديمة غير مدعومة وقد تتوقف عن العمل في أي وقت**، دون
+إشعار. واستمرارك في استخدام إصدار قديم يكون على مسؤوليتك الخاصة وغير
+مدعوم.
+
+--------------------------------------------------------------------------------
+5. عدم وجود أي ضمان
+--------------------------------------------------------------------------------
+يُقدَّم التطبيق «كما هو» و«كما هو متاح»، دون أي ضمان من أي نوع، صريح
+أو ضمني، بما في ذلك على سبيل المثال لا الحصر الضمانات الضمنية
+للتسويقية، أو الملاءمة لغرض معين، أو الملكية، أو عدم التعدي. ولا يضمن
+المطوّر استمرار التطبيق دون انقطاع أو خلوَّه من الأخطاء أو الفيروسات،
+أو أنه سيلبي متطلباتك، أو أنه سيستمر في العمل مع أي موقع أو خدمة أو
+محتوى محدد.
+
+--------------------------------------------------------------------------------
+6. تحديد المسؤولية
+--------------------------------------------------------------------------------
+في أقصى الحدود التي يسمح بها القانون المعمول به، لا يكون المطوّر
+مسؤولاً عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية، أو
+عن أي فقدان للبيانات أو الأرباح أو الإيرادات أو السمعة، تنشأ عن التطبيق
+أو استخدامه أو عدم القدرة على استخدامه، حتى لو أُبلغ المطوّر باحتمال
+وقوع مثل هذه الأضرار.
+
+في أقصى الحدود التي يسمح بها القانون المعمول به، فإن إجمالي مسؤولية
+المطوّر بموجب هذا الترخيص، عن أي مطالبة وكل المطالبات، لا يتجاوز المبلغ
+الذي دفعته مقابل التطبيق، وهو صفر.
+
+بعض السلطات القضائية لا تسمح باستبعاد أو تحديد بعض الضمانات أو
+المسؤوليات. وفي الحد الذي لا يسمح فيه القانون بهذا الاستبعاد أو التحديد،
+فإنها تنطبق عليك في أقصى الحدود المسموح بها فقط.
+
+--------------------------------------------------------------------------------
+7. مسؤولياتك
+--------------------------------------------------------------------------------
+التطبيق أداة. وما تفعله به هو مسؤوليتك، وأنت وحدك المسؤول عن كيفية
+استخدامه. وعلى وجه التحديد:
+
+- يجب عليك الالتزام بكافة قوانين حقوق النشر والملكية الفكرية الأخرى
+  التي تنطبق عليك، وبشروط الخدمة لأي منصة أو موقع يتفاعل معه التطبيق.
+- لا يجوز لك استخدام التطبيق إلا لتنزيل المحتوى الذي يحق لك تنزيله —
+  محتوى عام، أو محتوى تملكه، أو محتوى أذن مالكه بتنزيله. وكون المحتوى
+  متاحاً للعامة لا يعني في حد ذاته إذناً بالاحتفاظ به أو إعادة توزيعه.
+- لا يجوز لك استخدام التطبيق لانتهاك حقوق أي شخص، أو لتجاوز أي إجراء
+  حماية تقنية، أو للوصول إلى محتوى غير مصرَّح لك بالوصول إليه، أو لأي
+  غرض غير مشروع.
+
+لا يقوم المطوّر باختيار أي محتوى أو استضافته أو إرساله أو إتاحته، ولا
+يؤيد أو يشجع أي استخدام محدد للتطبيق.
+
+--------------------------------------------------------------------------------
+8. مكونات الجهات الخارجية تحتفظ بتراخيصها الخاصة
+--------------------------------------------------------------------------------
+يحتوي التطبيق على مكونات من جهات خارجية. ويخضع كل منها لترخيصه الخاص،
+ولا يقيِّد هذا الترخيص أو يحدَّ من أو يلغي **أي حق منحك إياه أيٌّ من تلك
+التراخيص.**
+
+ينطبق ذلك على وجه الخصوص وبلا قيد على **FFmpeg وFFprobe**، اللذين
+يُوزَّعان بموجب رخصة جنو العمومية الصغرى الإصدار 2.1 أو أحدث، التي تم
+ترقيتها إلى الإصدار 3 عبر إعداد البناء. والحقوق التي تمنحك إياها رخصة
+LGPL — بما في ذلك الحق في الحصول على الكود المصدري المطابق، والحق في
+استبدال ملفي FFmpeg — محفوظة بالكامل، ولا يضيِّقها أي شيء هنا، وهي
+موصوفة في الملفَين `FFMPEG-COPYRIGHT-NOTICE.md` و`FFMPEG-SOURCE-OFFER.md`
+وفي ملف `THIRD_PARTY_NOTICES.md`، وجميعها مثبَّتة مع التطبيق.
+
+--------------------------------------------------------------------------------
+9. عدم وجود أي ارتباط أو تأييد
+--------------------------------------------------------------------------------
+تطبيق «Reels Downloader» مشروع مستقل. وهو غير مرتبط بأي شكل، أو مؤيَّد
+أو مدعوم أو ممول أو ذو صلة رسمية بأي طريقة، بشركة Meta Platforms, Inc.
+أو Facebook أو Instagram أو أي منصة أو موقع أو خدمة أو شركة أخرى. وجميع
+أسماء المنتجات والشعارات والعلامات التجارية والعلامات التجارية
+المسجَّلة هي ملك لأصحابها، ولا تُذكر هنا إلا للتعريف بالمنصات التي يمكن
+للتطبيق التفاعل معها.
+
+--------------------------------------------------------------------------------
+10. التغييرات على هذا الترخيص وعلى التطبيق
+--------------------------------------------------------------------------------
+يجوز للمرخِّص تغيير هذا الترخيص في أي وقت، وتغيير التطبيق أو تعليقه أو
+إيقافه أو أي جزء منه في أي وقت، دون إشعار ودون أي مسؤولية. ويخضع
+استخدام إصدار معين من التطبيق للترخيص المُشحن مع ذلك الإصدار.
+
+--------------------------------------------------------------------------------
+11. لغة العقد
+--------------------------------------------------------------------------------
+كُتب هذا الترخيص باللغة الإنجليزية وتُرجم إلى العربية لتيسير القراءة.
+والنص الإنجليزي هو المعتمد؛ وتُقدَّم الترجمة العربية دون ضمان بدقتها،
+ولا تُعدِّل شروط النص الإنجليزي.
