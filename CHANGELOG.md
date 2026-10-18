@@ -8,6 +8,62 @@ than releases - is kept with the project's engineering reports.
 Engineering reports are maintained locally and are not included in the public
 repository.
 
+## 0.1.2
+
+**Date:** 2026-10-18
+
+**Bundled tools:**
+
+| Component | Version |
+|---|---|
+| yt-dlp | 2026.08.19 |
+| FFmpeg | n9.0.2-24-gfd5d616c29-20261009 |
+| Electron | 44.7.0 |
+
+### Summary
+
+Fixes two defects found after 0.1.1. No platform's analysis or download
+behaviour changed.
+
+- **Thumbnails on YouTube, Instagram and TikTok.** The picture shown beside an
+  analysis was only ever fetched from Facebook's image host, so an analysis on
+  any other platform fell back to the neutral placeholder. The main-process
+  fetch now accepts each supported platform's image family — Facebook,
+  Instagram, YouTube and TikTok — while keeping the same rules it had before:
+  https only, the default port only, a real host under one of those families,
+  every redirect re-checked, and only a small local `data:` image handed to the
+  renderer. The production Content-Security-Policy is unchanged.
+- **The required-update window is now visible.** When an update is mandatory,
+  it is shown in a window of its own, and that window was created hidden and
+  never shown — so the check, the download, its progress, and any failure ran
+  with nothing on screen, leaving the application blocked behind an invisible
+  window with no Retry and no manual-download link. The window now shows itself
+  as soon as its page has painted, so the version, the percentage, the
+  transferred and total bytes, the download speed and the Retry and
+  manual-download controls are all visible while the gate is pending. The
+  progress shown is still the real figure reported by the downloader; nothing is
+  estimated.
+
+### Known issues
+
+- **The updater-window fix reaches a running 0.1.1 only after it updates.**
+  The 0.1.1 release contains the hidden window, so the one update a 0.1.1
+  installation is offered — this one — is shown in the window it already has.
+  From 0.1.2 onward the window is visible. This is recorded so the behaviour of
+  that single transition is not reported as a new defect.
+- **The installer is not code-signed.** Windows SmartScreen will warn about an
+  unknown publisher. The release page publishes the installer's SHA-256; verify
+  it before running the file. See `SECURITY.md`.
+- **One LGPL question is the owner's to close.** The FFmpeg build is static, and
+  the written offer discharges what it can by documentation; the residual
+  section 4 question for a static build still needs the owner's own legal
+  sign-off before redistribution. See `FFMPEG-SOURCE-OFFER.md`.
+- **A platform can break this at any time.** The application reads public pages
+  from Facebook, YouTube, Instagram and TikTok. A change on any platform's side
+  can stop analysis or downloading for that platform without notice. A platform
+  that moves its images to a different host family will also stop showing that
+  platform's thumbnail until the fetch's allowlist is extended.
+
 ## 0.1.1
 
 **Date:** 2026-10-18
