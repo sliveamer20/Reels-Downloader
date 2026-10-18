@@ -8,6 +8,55 @@ than releases - is kept with the project's engineering reports.
 Engineering reports are maintained locally and are not included in the public
 repository.
 
+## 0.1.1
+
+**Date:** 2026-10-18
+
+**Bundled tools:**
+
+| Component | Version |
+|---|---|
+| yt-dlp | 2026.08.19 |
+| FFmpeg | n9.0.2-24-gfd5d616c29-20261009 |
+| Electron | 44.7.0 |
+
+### Summary
+
+Adds two more supported platforms and a default download folder that persists
+between runs. The Facebook behaviour described for 0.1.0 is unchanged.
+
+- **YouTube downloads.** Paste a YouTube video or Shorts link; the application
+  reads the page, lists the formats it offers together with the audio and video
+  streams each one carries, and downloads the chosen one. A video-only quality
+  is merged with its audio by the bundled FFmpeg, and the size estimate for a
+  merged download accounts for both streams.
+- **Instagram Reels.** Paste a public Instagram Reel link; the application reads
+  the page and downloads the chosen quality through the same analysis, download
+  and verification path as Facebook.
+- **TikTok.** Paste a public TikTok video link; the application reads the page
+  and downloads the chosen quality through the same path.
+- **A persistent default download folder.** Choose a folder once in Settings and
+  every download uses it. A folder picked for a single download still wins, and
+  with no folder chosen the Download button stays disabled rather than writing
+  somewhere the user did not name.
+- **One download flow for every platform.** Analysis, quality listing, progress,
+  cancel, already-downloaded detection and post-download verification behave the
+  same on every supported platform; only the link field and the platform's own
+  section change.
+
+### Known issues
+
+- **The installer is not code-signed.** Windows SmartScreen will warn about an
+  unknown publisher. The release page publishes the installer's SHA-256; verify
+  it before running the file. See `SECURITY.md`.
+- **One LGPL question is the owner's to close.** The FFmpeg build is static, and
+  the written offer discharges what it can by documentation; the residual
+  section 4 question for a static build still needs the owner's own legal
+  sign-off before redistribution. See `FFMPEG-SOURCE-OFFER.md`.
+- **A platform can break this at any time.** The application reads public pages
+  from Facebook, YouTube, Instagram and TikTok. A change on any platform's side
+  can stop analysis or downloading for that platform without notice.
+
 ## 0.1.0
 
 **Date:** 2026-10-16
