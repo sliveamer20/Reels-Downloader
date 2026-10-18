@@ -274,7 +274,7 @@ usage, does not collect telemetry, and does not upload anything.
 ## SHA-256 for the current release
 
 ```
-25be993515bd89f3b58b3b4a4ce28239bccfc34de3091e23d437e093e2d041cf   Reels-Downloader-Setup-0.1.2.exe   173,726,549 bytes
+8ec32673ff06a74ac25c2476928943964be3bdbe0e8b1467f80b039747feb002   Reels-Downloader-Setup-0.1.3.exe   174,700,556 bytes
 ```
 
 This value is regenerated and recorded for every release, and it is quoted on

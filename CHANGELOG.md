@@ -8,6 +8,58 @@ than releases - is kept with the project's engineering reports.
 Engineering reports are maintained locally and are not included in the public
 repository.
 
+## 0.1.3
+
+**Date:** 2026-10-18
+
+**Bundled tools:**
+
+| Component | Version |
+|---|---|
+| yt-dlp | 2026.08.19 |
+| FFmpeg | n9.0.2-24-gfd5d616c29-20261009 |
+| Electron | 44.7.0 |
+
+### Summary
+
+Adds one support contact and hardens the code that ships. No platform's
+analysis or download behaviour changed.
+
+- **WhatsApp support.** The Settings page carries a labelled **WhatsApp
+  Support** button. It opens the project's WhatsApp chat in the system browser
+  through the application's existing external-link path: the address is a
+  constant in the main process, it is re-checked against its own allowlist
+  (https, the `wa.me` host, the exact support number, the default port, nothing
+  appended) before the operating system is asked to open it, and nothing is
+  loaded inside the application window. The renderer is never given a URL to
+  name.
+- **The shipped JavaScript is obfuscated.** The application's own compiled
+  bundles are obfuscated at build time with `javascript-obfuscator`, a build-only
+  dependency that is not itself shipped. Source maps were already absent and
+  remain absent; the bundled tools, the licence and notice documents, the
+  packaged dependencies, and the HTML and CSS are deliberately left readable
+  because they must be.
+- **Two stricter window settings, and one application-level rule.** Web dialogs
+  (`alert`, `confirm`, `prompt`) are disabled outright — the interface uses none
+  of them — and a page can no longer resize the window by requesting HTML
+  fullscreen. Window creation is additionally denied at the application level for
+  every web contents the process creates, not only for the application's own
+  window. `contextIsolation`, the sandbox, the preload bridge, IPC validation and
+  the navigation restrictions are unchanged.
+
+### Known issues
+
+- **Obfuscation is not a security boundary.** It makes the shipped code tedious
+  to read; it does not prevent recovery. Packaged Electron code can still be
+  extracted and understood by a determined analyst. Nothing here is a substitute
+  for the integrity controls the installer already carries.
+- **The installer is not code-signed.** Windows SmartScreen will warn about an
+  unknown publisher. The release page publishes the installer's SHA-256; verify
+  it before running the file. See `SECURITY.md`.
+- **A platform can break this at any time.** The application reads public pages
+  from Facebook, YouTube, Instagram and TikTok. A change on any platform's side
+  can stop analysis or downloading for that platform without notice.
+
 ## 0.1.2
 
 **Date:** 2026-10-18
