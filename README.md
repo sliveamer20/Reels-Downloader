@@ -45,6 +45,9 @@ unverified by definition.
 - **A quality picker.** The analysis lists every quality the page offers; you
   choose one and the app tells you when a rendition will be merged from
   separate video and audio streams.
+- **Audio-only MP3.** Every quality list ends with an **MP3 audio only** choice:
+  the best audio the page offers is converted to MP3 by the bundled FFmpeg, on
+  all four supported platforms.
 - **A Reel preview.** The Reel's own preview picture, fetched over HTTPS,
   size-limited and shown before anything is downloaded.
 - **Already-downloaded detection.** Asking for a Reel you already have, in the
@@ -64,6 +67,8 @@ unverified by definition.
   النقل والوقت المتبقي، مع زر إلغاء يوقف العمل بنظافة دون ترك ملف ناقص.
 - **منتقي جودات.** يعرض التحليل كل الجودات التي تقدمها الصفحة، وتختار واحدة،
   ويخبرك التطبيق متى كانت الجودة ستُدمج من مجري فيديو وصوت منفصلين.
+- **صوت MP3 فقط.** تنتهي كل قائمة جودات بخيار **صوت MP3 فقط**: يُحوَّل أفضل صوت
+  متاح إلى MP3 بمحرّك FFmpeg المضمَّن، على المنصات الأربع المدعومة كلها.
 - **معاينة للريل.** صورة المعاينة الخاصة بمقطع Reel نفسه، تُجلب عبر HTTPS ضمن
   حد للحجم، وتُعرض قبل تنزيل أي شيء.
 - **كشف التنزيلات المكررة.** إن طلبت مقطعاً لديك في المجلد نفسه، قال التطبيق
@@ -106,29 +111,50 @@ unverified by definition.
 
 ## Supported links / الروابط المدعومة
 
-Three link shapes are read, on the Facebook hosts only:
+On the Facebook hosts, both Reel links and regular video links are read:
 
 | Shape | Example |
 |---|---|
 | Reel permalink | `https://www.facebook.com/reel/<number>` |
 | Reels (plural path) | `https://www.facebook.com/reels/<number>` |
-| Share path | `https://www.facebook.com/share/r/<token>` |
+| Reel share path | `https://www.facebook.com/share/r/<token>` |
+| Regular video | `https://www.facebook.com/watch?v=<number>` |
+| Legacy video endpoint | `https://www.facebook.com/video.php?v=<number>` |
+| Page or profile video | `https://www.facebook.com/<account>/videos/<number>` |
+| Video share path | `https://www.facebook.com/share/v/<token>` |
 
-Hosts accepted: `facebook.com`, `www.facebook.com`, `m.facebook.com`,
-`web.facebook.com`. Everything else is refused, and so is any other link
-shape — deliberately, so the application never fetches a page it does not
-understand.
+Facebook hosts accepted: `facebook.com`, `www.facebook.com`, `m.facebook.com`,
+`web.facebook.com`. A regular video link is rebuilt into the address
+`https://www.facebook.com/watch/?v=<number>` from the validated number alone, so
+any tracking tag on the pasted link is dropped.
+
+Three more platforms are supported, each on its own hosts:
+
+| Platform | Shapes |
+|---|---|
+| YouTube | `youtube.com/shorts/<id>`, `youtube.com/watch?v=<id>`, `youtu.be/<id>` |
+| Instagram | `instagram.com/reel/<id>`, `instagram.com/reels/<id>`, `instagram.com/p/<id>` |
+| TikTok | `tiktok.com/` + `@` + `<user>/video/<id>`, `vm.tiktok.com/<token>` |
+
+Every host and every shape not listed here is refused — deliberately, so the
+application never fetches a page it does not understand. A link that names no
+single video, or that carries two different ids, is refused rather than guessed
+at.
 
 **`fb.watch` short links are recognised but not downloaded.** The field
 reports that the link looks valid, and the application then explains that it
-will not follow a short-link redirect and asks for the Reel's permalink
+will not follow a short-link redirect and asks for the video's own link
 instead. That is deliberate: resolving the short link would mean following a
 redirect to a page the application has not allowed, and no request is made.
 
-تُقرأ ثلاثة أشكال من الروابط على مضيفات فيسبوك حصراً: رابط الريل، ومسار
-`reels`، ومسار المشاركة `share/r`. كل ما عدا ذلك يُرفض عمداً حتى لا يجلب التطبيق
+تُقرأ روابط فيسبوك بكل أشكالها: رابط الريل، والشكل الجمع `reels`، ومسار مشاركة
+الريل `share/r`، وروابط الفيديو العادي — `watch?v=` و`video.php?v=` ومسار
+`/<account>/videos/<id>` ومسار مشاركة الفيديو `share/v`. ويُعاد بناء رابط الفيديو
+العادي من رقمه وحده، فتُسقَط وسوم التتبع. وتُدعم كذلك يوتيوب (المقاطع القصيرة
+والفيديو العادي و`youtu.be`) وإنستغرام (الريل والمنشورات) وتيك توك (صفحة الفيديو
+و`vm.tiktok.com`). وكل مضيف أو شكل غير مذكور هنا يُرفض عمداً حتى لا يجلب التطبيق
 أبداً صفحة لا يفهمها. أما روابط `fb.watch` القصيرة فيُتعرَّف عليها على أنها صحيحة،
-ثم يوضّح التطبيق أنه لن يتبع إعادة توجيهها ويطلب رابط الريل نفسه بدلاً منها.
+ثم يوضّح التطبيق أنه لن يتبع إعادة توجيهها ويطلب رابط الفيديو نفسه بدلاً منها.
 
 ## System requirements / متطلبات النظام
 
@@ -298,7 +324,7 @@ that contact reveals is spelled out the same way in [`SECURITY.md`](SECURITY.md)
 ## SHA-256 for the current release
 
 ```
-b80b916d182dfc9fbfdea413c9947d569d120ba6970bd7c521828d0628d7520c   Reels-Downloader-Setup-0.1.4.exe   174,705,014 bytes
+2b31716769be423b9a0fd638686722d016e8b6ad3b01816dae1c183f38e8ee66   Reels-Downloader-Setup-0.1.5.exe   174,709,020 bytes
 ```
 
 This value is regenerated and recorded for every release, and it is quoted on

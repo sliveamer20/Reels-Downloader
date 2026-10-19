@@ -8,6 +8,67 @@ than releases - is kept with the project's engineering reports.
 Engineering reports are maintained locally and are not included in the public
 repository.
 
+## 0.1.5
+
+**Date:** 2026-10-19
+
+**Bundled tools:**
+
+| Component | Version |
+|---|---|
+| yt-dlp | 2026.08.19 |
+| FFmpeg | n9.0.2-24-gfd5d616c29-20261009 |
+| Electron | 44.7.0 |
+
+### Summary
+
+Adds regular Facebook video links and a real audio-only MP3 download, and makes
+the project's local statistics dashboard start with a documented command.
+
+- **Regular Facebook videos, not only Reels.** The link field now accepts the
+  shapes Facebook's own share menu produces for an ordinary video —
+  `/watch?v=<number>`, `/video.php?v=<number>`,
+  `/<account>/videos/<number>`, `/<account>/videos/<slug>/<number>` and
+  `/share/v/<token>` — on the same four Facebook hosts, in addition to the Reel
+  shapes. A regular video reaches the same analysis, quality listing and
+  download path as a Reel. Each accepted link is rebuilt into one canonical
+  form from the validated numeric id alone, so tracking tags and other query
+  parameters never survive into the request; a link that names no single video,
+  or that carries two different ids, is refused rather than guessed at.
+- **Audio-only MP3, on every platform.** The quality list for a download now
+  ends with an **MP3 audio only** choice — on Facebook, YouTube (videos and
+  Shorts), Instagram and TikTok, wherever the page offers downloadable media at
+  all. Choosing it fetches the best available audio and converts it to MP3 with
+  the bundled FFmpeg; the finished file is named `<id>.mp3` and is verified on
+  disk like every other download. The choice is a reserved application-level
+  entry, not a format id the interface supplies, so the interface can never
+  name an audio format, a quality or an FFmpeg option. Every existing video
+  quality, and the merge behaviour for video-only renditions, is unchanged.
+- **The local statistics dashboard starts with a documented command.** The
+  operator dashboard — a local administrative tool, not part of the installed
+  application — is started with `npm run analytics:dashboard`, and it now
+  reports a missing administrative token, an invalid port, or a port that is
+  already in use with a clear message instead of a connection that is silently
+  refused.
+
+### Known issues
+
+- **The installer is not code-signed.** Windows SmartScreen will warn about an
+  unknown publisher. The release page publishes the installer's SHA-256; verify
+  it before running the file. See `SECURITY.md`.
+- **One LGPL question is the owner's to close.** The FFmpeg build is static, and
+  the written offer discharges what it can by documentation; the residual
+  section 4 question for a static build still needs the owner's own legal
+  sign-off before redistribution. See `FFMPEG-SOURCE-OFFER.md`.
+- **The new link shapes and the MP3 conversion are verified offline, not
+  against live pages.** The Facebook regular-video shapes, the canonicalisation
+  and the MP3 extraction command are covered by the offline test suite; no live
+  public link on any platform was downloaded as part of this release, so a
+  change on a platform's side could still affect a real run.
+- **A platform can break this at any time.** The application reads public pages
+  from Facebook, YouTube, Instagram and TikTok. A change on any platform's side
+  can stop analysis or downloading for that platform without notice.
+
 ## 0.1.4
 
 **Date:** 2026-10-19
