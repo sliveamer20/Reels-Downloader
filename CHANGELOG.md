@@ -8,9 +8,55 @@ than releases - is kept with the project's engineering reports.
 Engineering reports are maintained locally and are not included in the public
 repository.
 
+## 0.1.4
+
+**Date:** 2026-10-19
+
+**Bundled tools:**
+
+| Component | Version |
+|---|---|
+| yt-dlp | 2026.08.19 |
+| FFmpeg | n9.0.2-24-gfd5d616c29-20261009 |
+| Electron | 44.7.0 |
+
+### Summary
+
+Makes the anonymous installation count run automatically, and removes the
+Settings control for it. No platform's analysis or download behaviour changed.
+
+- **The anonymous installation count now runs in the background.** It starts
+  by itself on every launch — one small heartbeat at startup, then one every
+  thirty minutes — for both new installations and upgrades, and there is no
+  longer any switch to turn it on or off. A heartbeat is unchanged: a random
+  identifier created on this computer, the application version, the operating
+  system, and a schema version. No name, no phone number, no email address, no
+  link, no file name, and no download history. What it reveals — an IP address
+  to the project's own statistics service — is now what the privacy notice says
+  it reveals.
+- **The "Anonymous usage statistics" card is gone from Settings.** The switch,
+  its title, its help text and its disclosure are removed, because there is no
+  longer a control behind them. What the count does, and that it cannot be
+  turned off, is stated in the privacy notice in `README.md` and
+  `SECURITY.md` instead. An installation upgrading from 0.1.3 keeps every other
+  setting it had, whatever that switch was left at.
+
+### Known issues
+
+- **The installer is not code-signed.** Windows SmartScreen will warn about an
+  unknown publisher. The release page publishes the installer's SHA-256; verify
+  it before running the file. See `SECURITY.md`.
+- **The anonymous count cannot be disabled from the interface.** It runs in the
+  background like the mandatory update check; the only way to stop the
+  heartbeat is to block the statistics host or stop running the application.
+  This is stated plainly in the privacy notice rather than left implicit.
+- **A platform can break this at any time.** The application reads public pages
+  from Facebook, YouTube, Instagram and TikTok. A change on any platform's side
+  can stop analysis or downloading for that platform without notice.
+
 ## 0.1.3
 
-**Date:** 2026-10-18
+**Date:** 2026-10-19
 
 **Bundled tools:**
 
@@ -62,7 +108,7 @@ analysis or download behaviour changed.
 
 ## 0.1.2
 
-**Date:** 2026-10-18
+**Date:** 2026-10-19
 
 **Bundled tools:**
 
@@ -118,7 +164,7 @@ behaviour changed.
 
 ## 0.1.1
 
-**Date:** 2026-10-18
+**Date:** 2026-10-19
 
 **Bundled tools:**
 

@@ -35,8 +35,8 @@ The corresponding source is published as release assets alongside the
 installer, in the project's public releases repository:
 
 ```
-https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.3/FFmpeg-n9.0.2-24-gfd5d616c29.tar.gz
-https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.3/FFmpeg-Builds-bd26828f0e96.tar.gz
+https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.4/FFmpeg-n9.0.2-24-gfd5d616c29.tar.gz
+https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.4/FFmpeg-Builds-bd26828f0e96.tar.gz
 ```
 
 Both archives are published as release assets beside the installer, and their

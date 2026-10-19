@@ -192,18 +192,27 @@ The short version; [`SECURITY.md`](SECURITY.md) is the full policy.
   not code-signed, so the published checksum — not the file's icon, its
   publisher name, or where you downloaded it from — is the control that tells
   you a file is the one that was built here.
-- **The app contacts three kinds of host and nothing else:** Facebook's public
-  pages (to read the Reel you linked), GitHub (once per launch, for the update
-  check), and Facebook's image CDN (once per analysed Reel, for its picture).
-  It sends no credentials, no cookies, and no telemetry; requests are HTTPS
-  only and host-allowlisted.
+- **The app contacts four kinds of host by itself, and nothing else:** Facebook's
+  public pages (to read the Reel you linked), GitHub (once per launch, for the
+  update check), Facebook's image CDN (once per analysed Reel, for its picture),
+  and the project's own statistics service (for the anonymous installation count
+  described in the FAQ below). It sends no credentials and no cookies, and those
+  requests are HTTPS only and host-allowlisted. The anonymous count runs
+  **automatically in the background** — one small heartbeat at launch and one every
+  thirty minutes, carrying a random identifier created on this computer, the app
+  version and the operating system, and nothing else. There is **no switch** that
+  turns it on or off.
 
 لإبلاغ عن ثغرة استخدم خاصية الإبلاغ الخاص في GitHub على هذا المستودع، ولا
 ترسل بريداً إلكترونياً ولا تفتح مسألة عامة. وتحقّق من بصمة SHA-256 لكل تنزيل:
 فالتطبيق غير موقَّع برمجياً، والبصمة المنشورة هي الضمانة الوحيدة على أن الملف
-هو الملف الذي بُني هنا. ويتصل التطبيق بثلاثة أنواع من المضيفات فقط — صفحات
-فيسبوك العامة، وGitHub لفحص التحديث، وخوادم صور فيسبوك للمعاينة — بلا بيانات
-اعتماد ولا ملفات تعريف ارتباط ولا تتبّع.
+هو الملف الذي بُني هنا. ويتصل التطبيق بأربعة أنواع من المضيفات بنفسه ولا شيء
+غيرها — صفحات فيسبوك العامة، وGitHub لفحص التحديث، وخوادم صور فيسبوك للمعاينة،
+وخادم إحصاءات المشروع للعدّ المجهول للتثبيتات — بلا بيانات اعتماد ولا ملفات
+تعريف ارتباط، والطلبات عبر HTTPS فقط وضمن قائمة مضيفين مسموح بها. والعدّ المجهول
+يعمل تلقائيًا في الخلفية: نبضة صغيرة عند كل إقلاع ثم نبضة كل ثلاثين دقيقة، تحمل
+معرّفًا عشوائيًا يُنشأ على هذا الجهاز وإصدار التطبيق ونوع نظام التشغيل ولا شيء
+غير ذلك. ولا يوجد مفتاح لتشغيله أو إيقافه.
 
 ## FAQ / أسئلة متكررة
 
@@ -253,15 +262,30 @@ modified copy cannot masquerade as the official one.
    see your IP address, and the only thing the check reveals.
 3. **Facebook's image CDN** (`*.fbcdn.net`) — once per analysed Reel, for its
    preview picture, size- and time-limited.
+4. **The project's own statistics service**
+   (`reels-downloader-analytics.sliveamer20.workers.dev`) — automatically, for the
+   anonymous installation count. One small heartbeat at launch, then one every
+   thirty minutes, carrying a random identifier created on this computer, the app
+   version, the operating system, and a schema version. No name, no phone number,
+   no email address, no link, no file name, and no download history. It is what
+   lets that service see your IP address, which is the only thing a heartbeat
+   reveals about you. There is no switch: the count runs in the background, like
+   the update check.
 
-Requests are HTTPS-only and host-allowlisted. The application does not report
-usage, does not collect telemetry, and does not upload anything.
+Requests are HTTPS-only and host-allowlisted, and the application never uploads
+anything: no file, no URL, and nothing you downloaded. What it contacts and what
+that contact reveals is spelled out the same way in [`SECURITY.md`](SECURITY.md).
 
-ثلاثة أنواع من المضيفين ولا شيء غيرهم: صفحات فيسبوك العامة عبر yt-dlp
-المضمَّن (دون تسجيل دخول أو بيانات اعتماد)، وGitHub مرة واحدة عند كل إقلاع
-للفحص عن التحديث (وهو ما يكشف عنوان IP لـ GitHub فحسب)، وخوادم صور فيسبوك مرة
-واحدة لكل تحليل لجلب صورة المعاينة. الطلبات عبر HTTPS فقط وضمن قائمة مضيفين
-مسموح بها. التطبيق لا يجمع بيانات الاستخدام ولا يرفع شيئاً.
+أربعة مضيفين: صفحات فيسبوك العامة عبر yt-dlp المضمَّن (دون تسجيل دخول أو بيانات
+اعتماد)، وGitHub مرة واحدة عند كل إقلاع للفحص عن التحديث (وهو ما يكشف عنوان IP
+لـ GitHub فحسب)، وخوادم صور فيسبوك مرة واحدة لكل تحليل لجلب صورة المعاينة، ثم
+خادم إحصاءات المشروع (reels-downloader-analytics.sliveamer20.workers.dev)
+تلقائيًا للعدّ المجهول للتثبيتات: نبضة صغيرة عند كل إقلاع ثم نبضة كل ثلاثين دقيقة،
+تحمل معرّفًا عشوائيًا يُنشأ على هذا الجهاز وإصدار التطبيق ونوع نظام التشغيل وإصدار
+البروتوكول، بلا اسم ولا رقم هاتف ولا بريد إلكتروني ولا رابط ولا اسم ملف ولا سجل
+تنزيلات. وهو ما يكشف عنوان IP الخاص بك لهذا الخادم فحسب. ولا يوجد مفتاح لتشغيله
+أو إيقافه؛ فهو يعمل في الخلفية مثل فحص التحديث. والطلبات عبر HTTPS فقط وضمن قائمة
+مضيفين مسموح بها، ولا يرفع التطبيق شيئاً أبداً: لا ملف ولا رابط ولا أي شيء نزّلته.
 
 ## Bundled components / المكونات المضمَّنة
 
@@ -274,7 +298,7 @@ usage, does not collect telemetry, and does not upload anything.
 ## SHA-256 for the current release
 
 ```
-8ec32673ff06a74ac25c2476928943964be3bdbe0e8b1467f80b039747feb002   Reels-Downloader-Setup-0.1.3.exe   174,700,556 bytes
+b80b916d182dfc9fbfdea413c9947d569d120ba6970bd7c521828d0628d7520c   Reels-Downloader-Setup-0.1.4.exe   174,705,014 bytes
 ```
 
 This value is regenerated and recorded for every release, and it is quoted on

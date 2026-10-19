@@ -85,9 +85,9 @@ Stated plainly, because the threat model follows from it:
 - The application talks to **Facebook's public web pages** (through the bundled
   yt-dlp), to **GitHub**, once at launch, to check whether a newer release
   exists, and to **Facebook's image CDN** (`*.fbcdn.net`), once per analysed
-  Reel, for that Reel's preview picture. It makes no other network connections.
-  The update check is confined to a deny-by-default network policy: the
-  application's update component may reach only `github.com`,
+  Reel, for that Reel's preview picture. Those are the only connections it makes
+  on its own. The update check is confined to a deny-by-default network policy:
+  the application's update component may reach only `github.com`,
   `release-assets.githubusercontent.com`, and `objects.githubusercontent.com`,
   over HTTPS on the standard port. Every other request it attempts — another
   host, a subdomain of an allowed one, a non-HTTPS scheme, or another port — is
@@ -103,6 +103,32 @@ Stated plainly, because the threat model follows from it:
   thumbnail's address is never passed to the interface: the main process
   fetches, shrinks and re-encodes it and hands over a local data URL, which is
   also why the content-security policy no longer names a remote image source.
+- It sends **one further kind of request automatically, in the background**. This
+  is the anonymous usage count: the application posts **one small heartbeat at
+  launch and then one every thirty minutes** to the project's own statistics
+  service, `reels-downloader-analytics.sliveamer20.workers.dev`, over HTTPS, on the
+  standard port, from a session of its own whose request policy allows that one
+  address and cancels everything else. There is **no switch**: the count runs by
+  itself, like the update check, and it cannot be turned off from the settings
+  screen. A settings file written by an older build cannot turn it off either — the
+  retired `analyticsEnabled` key is still accepted so the file keeps loading, but
+  nothing reads its value. The disclosure in the settings screen states the
+  frequency and the fields.
+
+  A heartbeat carries five fields and nothing else: a random identifier created
+  on this computer, the application version, the operating-system family
+  (`win32`, `darwin` or `linux`), a schema version, and whether it is the first
+  beacon of the run. The identifier is not derived from anything about the
+  machine or the person using it — not a machine id, a MAC address, a disk
+  serial, a hostname, an account, or the time — and it is stored in a file the
+  interface cannot read; there is no channel that exposes it. It carries no name,
+  no phone number, no email address, no media or Reel URL, no file name, no
+  download path, no download history, no language, and no content of anything you
+  downloaded. The service is written to store no IP address, and the heartbeat
+  request sends a constant user agent rather than Electron's, so no version or
+  platform is disclosed in a header either. The one thing it necessarily reveals
+  is your IP address to that service, because a request has to come from
+  somewhere; that is what the disclosure on the settings screen says.
 - It sends **no credentials and no cookies**. It does not accept a login and
   has no way to hold one. If a page requires an account, the download fails
   rather than prompting for a password.
@@ -113,7 +139,9 @@ Stated plainly, because the threat model follows from it:
   asked for, does not follow redirects to a different host, and does not fetch
   from or connect to anything the user did not link to.
 - Settings and the last-used folder are stored locally under the user's
-  profile. No telemetry is collected and nothing is uploaded.
+  profile. **The only telemetry is the anonymous installation count described
+  above**, which runs in the background, and nothing is ever uploaded: no file, no
+  URL, no file name, and nothing you downloaded.
 
 ## Out of scope
 
