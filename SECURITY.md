@@ -37,7 +37,7 @@ system-level barrier a user sees, because the installer is not code-signed.
 1. Take the SHA-256 of the file you downloaded:
 
    ```powershell
-   Get-FileHash -Algorithm SHA256 "Reels-Downloader-Setup-<version>.exe"
+   Get-FileHash -Algorithm SHA256 "LUNA-Setup-<version>.exe"
    ```
 
 2. Compare it with the checksum published on the release page in this

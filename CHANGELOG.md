@@ -1,16 +1,98 @@
 # Changelog
 
-This is the public changelog for Reels Downloader. It records what each release
-contains, and the versions of the tools each release bundles.
+This is the public changelog for LUNA. It records what each release contains,
+and the versions of the tools each release bundles.
 
 The development log - which records defects, investigations, and fixes rather
 than releases - is kept with the project's engineering reports.
 Engineering reports are maintained locally and are not included in the public
 repository.
 
+## 0.1.6
+
+**Date:** 2026-11-15
+
+**Bundled tools:**
+
+| Component | Version |
+|---|---|
+| yt-dlp | 2026.08.19 |
+| FFmpeg | n9.0.2-24-gfd5d616c29-20261009 |
+| Electron | 44.7.0 |
+
+### Summary
+
+Prepares the Windows release for Authenticode code signing and preserves the
+v0.1.5 functionality: regular Facebook video link shapes, the audio-only MP3
+choice on every supported platform, and the documented local analytics-dashboard
+start. Application behaviour is unchanged.
+
+- **The application is renamed LUNA.** The window title, the Start-menu shortcut,
+  the installed executable (`LUNA.exe`), the uninstall entry, and the installer
+  (`LUNA-Setup-<version>.exe`) all use the new name. Nothing about how the app
+  works changes.
+- **Existing installations upgrade in place.** The upgrade identity (the
+  installer's application id) is unchanged, so an installed v0.1.5 is replaced
+  rather than installed alongside, and the settings and downloads in
+  `%APPDATA%\Reels Downloader` and the user's download folder are kept. The
+  user-data folder keeps its original path on purpose: renaming it would look
+  like a fresh install and discard the user's settings.
+- **The publisher is still Mohamed Farouk Amer.** The product name and the
+  publisher identity are separate: the certificate subject, `CompanyName`,
+  copyright line, and updater `publisherName` are unchanged.
+- **Repository and service identifiers are unchanged.** The GitHub repository,
+  the npm package name, the update feed, and the analytics host keep their
+  original identifiers so updates and statistics continue to work.
+
+- **Signing is a build requirement, not a manual afterthought.** The Windows
+  build now fails if the application executable or the NSIS installer cannot be
+  signed with a trusted code-signing certificate whose Subject CN is
+  `Mohamed Farouk Amer`. SHA-256 is the digest algorithm, and every signature
+  must carry an RFC 3161 timestamp from a trusted timestamp service.
+- **The package is verified after it is built.** `npm run verify:signatures`
+  checks the application executable and the installer with Windows
+  `Get-AuthenticodeSignature` and `signtool verify`, including the publisher CN,
+  certificate chain, validity period, timestamp, file digest, and the publisher
+  name electron-updater reads. The release bundle refuses to stage a build that
+  fails that check.
+- **Publisher metadata is consistent.** The executable's `CompanyName`,
+  copyright, the certificate subject, and the updater's `publisherName` all name
+  `Mohamed Farouk Amer`.
+
+### Known issues
+
+- **This release is unsigned, deliberately and visibly.** No trusted Authenticode
+  certificate for `Mohamed Farouk Amer` was available on the build machine. The
+  only installed code-signing certificate is self-signed, untrusted, and issued
+  to a different name, so it was not used. v0.1.6 was packaged through the
+  explicit, per-release unsigned mode (`ALLOW_UNSIGNED_RELEASE=1`), which is
+  never the default: `build.win.forceCodeSigning` stays `true`, and a future
+  build with a trusted certificate goes back through `npm run dist`. The
+  installer is therefore **not** Authenticode-signed, the publisher identity is
+  not cryptographically verified, and Windows may show an Unknown Publisher or
+  Microsoft SmartScreen warning. `release-manifest.json` records
+  `signatureStatus: unsigned`, and the release page carries the Windows
+  Installer Security Notice. Verify the SHA-256 before running the installer.
+- **A signature does not guarantee that SmartScreen stops warning.** SmartScreen
+  also uses download reputation and other signals. Signing establishes publisher
+  identity and file integrity; it does not by itself establish reputation.
+- **No SmartScreen test was performed for v0.1.6.** No download-and-run test was
+  performed on a clean Windows machine, so no claim is made about what
+  SmartScreen shows for this exact file.
+- **One LGPL question is the owner's to close.** The FFmpeg build is static, and
+  the written offer and corresponding source discharge what they can by
+  documentation; the residual section 4 question for a static build still needs
+  the owner's own legal sign-off. See `FFMPEG-SOURCE-OFFER.md`. The offer's URLs
+  point at the v0.1.6 release assets, and this release publishes both
+  corresponding-source archives beside the installer.
+- **The v0.1.5 features remain verified offline, not against live pages.** The
+  Facebook regular-video shapes, the canonicalisation and the MP3 extraction
+  command are covered by the offline test suite; no live public link on any
+  platform was downloaded as part of this preparation.
+
 ## 0.1.5
 
-**Date:** 2026-10-19
+**Date:** 2026-11-15
 
 **Bundled tools:**
 
@@ -71,7 +153,7 @@ the project's local statistics dashboard start with a documented command.
 
 ## 0.1.4
 
-**Date:** 2026-10-19
+**Date:** 2026-11-15
 
 **Bundled tools:**
 
@@ -117,7 +199,7 @@ Settings control for it. No platform's analysis or download behaviour changed.
 
 ## 0.1.3
 
-**Date:** 2026-10-19
+**Date:** 2026-11-15
 
 **Bundled tools:**
 
@@ -169,7 +251,7 @@ analysis or download behaviour changed.
 
 ## 0.1.2
 
-**Date:** 2026-10-19
+**Date:** 2026-11-15
 
 **Bundled tools:**
 
@@ -225,7 +307,7 @@ behaviour changed.
 
 ## 0.1.1
 
-**Date:** 2026-10-19
+**Date:** 2026-11-15
 
 **Bundled tools:**
 

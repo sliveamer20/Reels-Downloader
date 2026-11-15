@@ -1,9 +1,9 @@
 ================================================================================
-                    Reels Downloader — Proprietary Notice
+                    LUNA — Proprietary Notice
 ================================================================================
 
 Mohamed Farouk Amer ("the Developer") owns the developer-owned portions of
-Reels Downloader described in this document. In this document, "the
+LUNA described in this document. In this document, "the
 Application" means those developer-owned portions, described in section 3.
 
 --------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ Application" means those developer-owned portions, described in section 3.
 --------------------------------------------------------------------------------
 Copyright © Mohamed Farouk Amer. All Rights Reserved.
 
-Reels Downloader is proprietary software owned by Mohamed Farouk Amer.
+LUNA is proprietary software owned by Mohamed Farouk Amer.
 
 Redistribution, resale, sublicensing, or commercial distribution of the
 developer-owned portions of this software, in whole or in part, is prohibited
@@ -131,7 +131,7 @@ Application.
 --------------------------------------------------------------------------------
 9. No affiliation or endorsement
 --------------------------------------------------------------------------------
-Reels Downloader is an independent project. It is not affiliated with, endorsed
+LUNA is an independent project. It is not affiliated with, endorsed
 by, sponsored by, or in any way officially connected to Meta Platforms, Inc.,
 Facebook, Instagram, or any other platform, website, service, or company. All
 product names, logos, brands, trademarks, and registered trademarks are the
@@ -164,7 +164,7 @@ without warranty of exactness and does not modify the English terms.
 ================================================================================
 
 يملك «المطوّر»، وهو Mohamed Farouk Amer، الأجزاء المملوكة للمطوّر من تطبيق
-Reels Downloader الموصوفة في هذا المستند. ويُشار في هذا المستند إلى «التطبيق»
+LUNA الموصوفة في هذا المستند. ويُشار في هذا المستند إلى «التطبيق»
 بالمقصود تلك الأجزاء المملوكة للمطوّر، الموصوفة في القسم 3.
 
 --------------------------------------------------------------------------------
@@ -172,7 +172,7 @@ Reels Downloader الموصوفة في هذا المستند. ويُشار في 
 --------------------------------------------------------------------------------
 حقوق النشر © 2026 Mohamed Farouk Amer. جميع الحقوق محفوظة.
 
-تطبيق Reels Downloader هو برمجيات مملوكة للمطوّر.
+تطبيق LUNA هو برمجيات مملوكة للمطوّر.
 
 يُحظر، دون إذن كتابي مسبق من المطوّر، إعادة توزيع الأجزاء المملوكة للمطوّر من
 هذه البرمجيات أو بيعها أو تفويضها من الباطن أو توزيعها تجارياً، كلياً أو جزئياً،
@@ -280,7 +280,7 @@ LGPL — بما في ذلك الحق في الحصول على الكود الم�
 --------------------------------------------------------------------------------
 9. عدم وجود أي ارتباط أو تأييد
 --------------------------------------------------------------------------------
-تطبيق «Reels Downloader» مشروع مستقل. وهو غير مرتبط بأي شكل، أو مؤيَّد
+تطبيق «LUNA» مشروع مستقل. وهو غير مرتبط بأي شكل، أو مؤيَّد
 أو مدعوم أو ممول أو ذو صلة رسمية بأي طريقة، بشركة Meta Platforms, Inc.
 أو Facebook أو Instagram أو أي منصة أو موقع أو خدمة أو شركة أخرى. وجميع
 أسماء المنتجات والشعارات والعلامات التجارية والعلامات التجارية

@@ -1,7 +1,12 @@
-# Reels Downloader
+# LUNA
 
 *A free Windows application for downloading public Facebook Reels you have the
 right to keep — by Mohamed Farouk Amer.*
+
+> **LUNA is the application's current name.** It was previously published as
+> *Reels Downloader*. Existing installations update in place and keep their
+> settings and downloads; the GitHub repository keeps its original URL so that
+> links and the update feed continue to work.
 
 **تطبيق مجاني لنظام Windows لتنزيل مقاطع Reels العامة على فيسبوك والتي يحق لك
 الاحتفاظ بها.**
@@ -28,7 +33,7 @@ unverified by definition.
 
 | File | Purpose |
 |---|---|
-| `Reels-Downloader-Setup-<version>.exe` | The installer. Installs for your user account only — no administrator rights required. |
+| `LUNA-Setup-<version>.exe` | The installer. Installs for your user account only — no administrator rights required. |
 
 ### Screenshots / لقطات الشاشة
 
@@ -168,13 +173,13 @@ redirect to a page the application has not allowed, and no request is made.
 
 ## Install / التثبيت
 
-1. Download `Reels-Downloader-Setup-<version>.exe` from the
+1. Download `LUNA-Setup-<version>.exe` from the
    [latest release](https://github.com/sliveamer20/Reels-Downloader/releases/latest).
 2. **Verify the SHA-256** against the value published with the release (see
    below). In PowerShell:
 
    ```powershell
-   Get-FileHash -Algorithm SHA256 "Reels-Downloader-Setup-<version>.exe"
+   Get-FileHash -Algorithm SHA256 "LUNA-Setup-<version>.exe"
    ```
 
    Compare the output with the checksum on the release page and with
@@ -324,7 +329,7 @@ that contact reveals is spelled out the same way in [`SECURITY.md`](SECURITY.md)
 ## SHA-256 for the current release
 
 ```
-2b31716769be423b9a0fd638686722d016e8b6ad3b01816dae1c183f38e8ee66   Reels-Downloader-Setup-0.1.5.exe   174,709,020 bytes
+88fa790d2a62edf2045d675517af6e76f475c2dc2a53c469d3cd079f2e2e83f7   LUNA-Setup-0.1.6.exe   174,709,484 bytes
 ```
 
 This value is regenerated and recorded for every release, and it is quoted on
@@ -473,4 +478,4 @@ repository.
 
 ---
 
-Reels Downloader is developed by Mohamed Farouk Amer.
+LUNA is developed by Mohamed Farouk Amer.

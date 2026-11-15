@@ -1,10 +1,10 @@
 # Written Offer of Complete Corresponding Source — FFmpeg
 
 **As required by section 6 of the GNU Lesser General Public License version 3,
-and valid for at least three (3) years from the date this version of Reels
-Downloader was released.**
+and valid for at least three (3) years from the date this version of LUNA
+was released.**
 
-Reels Downloader conveys `ffmpeg.exe` with the application. It is an unmodified
+LUNA conveys `ffmpeg.exe` with the application. It is an unmodified
 build of FFmpeg produced by `BtbN/FFmpeg-Builds`, licensed
 under GNU LGPL v2.1 or later, upgraded to version 3 by the build's
 `--enable-version3`. This document is the written offer LGPL v3 section 6
@@ -35,8 +35,8 @@ The corresponding source is published as release assets alongside the
 installer, in the project's public releases repository:
 
 ```
-https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.5/FFmpeg-n9.0.2-24-gfd5d616c29.tar.gz
-https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.5/FFmpeg-Builds-bd26828f0e96.tar.gz
+https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.6/FFmpeg-n9.0.2-24-gfd5d616c29.tar.gz
+https://github.com/sliveamer20/Reels-Downloader/releases/download/v0.1.6/FFmpeg-Builds-bd26828f0e96.tar.gz
 ```
 
 Both archives are published as release assets beside the installer, and their
@@ -82,7 +82,7 @@ identical.
 If either asset is missing from the release page — because the release was
 taken down, or because three years have passed — write to the repository's
 issue tracker and the maintainer will provide the corresponding source. This
-offer is made by the distributor of Reels Downloader, not by the FFmpeg
+offer is made by the distributor of LUNA, not by the FFmpeg
 developers or by `BtbN`, and it is valid for at least three years from the
 release of this version.
 
@@ -92,7 +92,7 @@ The application is installed **per user**, not per machine, so the folder it
 installs into is writable by the account that installed it — no administrator
 rights are needed to swap the binary.
 
-1. Close Reels Downloader.
+1. Close LUNA.
 2. Open the install folder. It is the folder the application's About page
    reports as its installation location, and it is where `ffmpeg.exe` sits
    beside `yt-dlp.exe` and the licence files.
@@ -102,14 +102,14 @@ rights are needed to swap the binary.
 
 The application discovers the tools by looking in that folder and passes them
 `--ffmpeg-location <that folder>`, so a replacement build is picked up
-automatically. Reels Downloader only invokes them as separate processes with
+automatically. LUNA only invokes them as separate processes with
 command-line arguments (see §5); it does not require a particular FFmpeg
 version, a particular linking style, or a particular build variant. A
 dynamically linked build works as well as a static one.
 
 ## 5. What this means for the application itself
 
-Reels Downloader does not compile, link, or embed any FFmpeg code. It runs
+LUNA does not compile, link, or embed any FFmpeg code. It runs
 `ffmpeg.exe` as a child process and reads its output. The
 application is therefore not a work derived from FFmpeg by linking; the LGPL
 v3 obligations that apply here are the obligations of *conveying* the binary

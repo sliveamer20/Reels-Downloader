@@ -1,10 +1,10 @@
 # Disclaimer
 
-**Read this before using Reels Downloader.**
+**Read this before using LUNA.**
 
 ## It is a tool, not a right
 
-Reels Downloader is a tool that reads a public web page and saves the media that
+LUNA is a tool that reads a public web page and saves the media that
 page offers. It does not bypass paywalls, logins, age gates, region locks,
 membership requirements, or any other access control. If a Reel is not publicly
 accessible without an account, this application cannot download it — and it is
@@ -33,7 +33,7 @@ you, the rights holders, and the law.
 
 ## No affiliation
 
-Reels Downloader is an independent, unofficial project. It is not affiliated
+LUNA is an independent, unofficial project. It is not affiliated
 with, endorsed by, sponsored by, or in any way officially connected to
 **Meta Platforms, Inc., Facebook, Instagram, yt-dlp, FFmpeg, or any other
 company, platform, or project.** All product names, logos, brands, trademarks,

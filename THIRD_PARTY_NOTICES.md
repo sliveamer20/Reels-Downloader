@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-This file lists the third-party components Reels Downloader is built from and
+This file lists the third-party components LUNA is built from and
 redistributes, the licence each one is under, and where the licence text is.
 It is installed with the application, beside this file in the application's
 `resources\` folder.
@@ -10,7 +10,7 @@ with the component itself, shipped as a separate file in `resources\`, or both.
 
 ---
 
-## 1. Reels Downloader itself
+## 1. LUNA itself
 
 Copyright (c) 2026 Mohamed Farouk Amer. The application's own licence is
 `LICENSE.txt`, shipped beside this file. It is the owner's proprietary notice:
